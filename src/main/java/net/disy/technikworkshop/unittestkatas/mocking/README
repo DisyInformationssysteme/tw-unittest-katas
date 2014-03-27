@@ -1,0 +1,60 @@
+TODO Topics:
+- (DONE) Benjamin XML Test (Benjamin schickt Boris test)
+	http://stackoverflow.com/questions/14647861/xmlunit-diff-returns-similar-false-if-there-is-a-xsitype-and-a-different-namesp
+	
+- BDD Beispiele
+- Projekt Abhängigkeiten: wo geht was hin (Martin malt ist-Stand, wir schauen uns in X Wochen den  IST-Stand an und überlegen was man machen könnte/sollte)
+
+
+
+
+
+Reihenfolge: Radi, Martin, Markus, Klaus, Benjamin, Roman, Johannes, Yashar
+Next up: Radi
+
+The exercise is to implement the InstrumentProcessor in a way that
+
++ when the method Process is called then the InstrumentProcessor gets 
+  the next task from the task dispatcher and executes it on the instrument.
+  
++ when the Execute method of the instrument throws an exception then this 
+  exception is passed on to the caller of the Process method.
+  
++ when the instrument fires the Finished event then the InstrumentProcessor 
+  calls the task dispatcher’s FinishedTask method with the correct task.
+
+- when the instrument fires the Error event then the InstrumentProcessor 
+  writes the string "Error occurred" to the console.
+  
+  
+  
+  
+  
+  
+  
+  
+Background:
+
+Mockito docs: http://docs.mockito.googlecode.com/hg/latest/org/mockito/Mockito.html
+
+Mocks vs Stubs vs Fakes vs ... (from http://www.martinfowler.com/articles/mocksArentStubs.html )
+
+- Dummy objects are passed around but never actually used. 
+  Usually they are just used to fill parameter lists.
+  
+- Fake objects actually have working implementations, but 
+  usually take some shortcut which makes them not suitable 
+  for production (an in memory database is a good example).
+   
+- Stubs provide canned answers to calls made during the test, 
+  usually not responding at all to anything outside what's programmed 
+  in for the test. Stubs may also record information about calls, such 
+  as an email gateway stub that remembers the messages it 'sent', or 
+  maybe only how many messages it 'sent'.
+  
+- Mocks are what we are talking about here: objects pre-programmed 
+  with expectations which form a specification of the calls they 
+  are expected to receive.
+  
+  
+  
